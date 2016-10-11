@@ -9,7 +9,7 @@ public class UpdateModelTimerCommand : EventCommand {
 
 	override public void Execute()
 	{
-		int newTime = (int)evt.data;
+		int newTime = (int) evt.data;
 		timerModel.time = newTime;
 		dispatcher.Dispatch (GameEvents.ON_UPDATE_TIME, timerModel.time);
 	}

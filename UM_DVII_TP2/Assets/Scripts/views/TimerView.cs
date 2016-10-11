@@ -11,13 +11,14 @@ public class TimerView : EventView {
 
 	internal void Update()
 	{
-		//Debug.Log(Time.time);
+		dispatcher.Dispatch(GameEvents.ON_UPDATE, Time.deltaTime);
+
 	}
-		
+
 
 	internal void UpdatePlayTime(int time)
 	{
 		playtime = time;
 	}
-		
+
 }
