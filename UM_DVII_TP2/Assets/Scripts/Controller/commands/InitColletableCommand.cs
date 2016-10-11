@@ -2,6 +2,7 @@
 using System.Collections;
 using strange.extensions.command.impl;
 using strange.extensions.context.api;
+using System.Collections.Generic;
 
 public class InitColletableCommand : EventCommand {
 
@@ -27,6 +28,7 @@ public class InitColletableCommand : EventCommand {
 			{
 				collectableModel.amountPower = 20f;
 			}
+
 			string collectableName = Utility.Collectable + i;
 			GameObject goCollectable = GameObject.Instantiate(Resources.Load(collectableName)) as GameObject;
 			goCollectable.name = collectableName;

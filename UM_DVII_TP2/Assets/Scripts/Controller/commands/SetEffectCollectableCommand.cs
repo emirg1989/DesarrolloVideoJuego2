@@ -23,10 +23,12 @@ public class  SetEffectCollectableCommand: EventCommand {
 		if (viewName == Utility.Collectable0) {
 			player.Reset ();
 			float newDamage = player.speed + collectableModel.amountPower;
+			dispatcher.Dispatch (GameEvents.ON_INIT_TIMER, "Timer0");
 			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER, newDamage);
 		} else if (viewName == Utility.Collectable2) {
 			float newSpeed = collectableModel.amountPower;
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY, newSpeed);	
+			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY, newSpeed);
+			dispatcher.Dispatch (GameEvents.ON_INIT_TIMER, "Timer1");
 		} else if (viewName == Utility.Collectable1) {
 			float newDamage = weapon.damage + collectableModel.amountPower;
 			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON,newDamage);
