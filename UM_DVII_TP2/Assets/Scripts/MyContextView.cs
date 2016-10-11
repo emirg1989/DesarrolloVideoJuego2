@@ -19,6 +19,7 @@ public class MyContextView : MVCSContext {
 		commandBinder.Bind (GameEvents.ON_INIT_WEAPON).To<InitWeaponCommand> ();
 		commandBinder.Bind (GameEvents.ON_INIT_TIMER).To<InitTimerCommand> ();
 		commandBinder.Bind (GameEvents.ON_RESTORE_STATS).To<RestoreStatsCommand> ();
+		commandBinder.Bind (GameEvents.ON_UPDATE_MODEL_TIMER).To<UpdateModelTimerCommand> ();
 
 
         	

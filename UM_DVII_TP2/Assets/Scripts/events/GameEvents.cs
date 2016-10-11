@@ -28,4 +28,6 @@
 	public static string ON_INIT_TIMER_1 = "ON_INIT_TIMER_1";
 	public static string ON_RESTORE_STATS = "ON_RESTORE_STATS";
 	public static string ON_UPDATE_NEW_SPEED_ENEMY = "ON_UPDATE_NEW_SPEED_ENEMY";
+	public static string ON_UPDATE_MODEL_TIMER = "ON_UPDATE_MODEL_TIMER";
+	public static string ON_UPDATE_TIME = "ON_UPDATE_TIME";
 }

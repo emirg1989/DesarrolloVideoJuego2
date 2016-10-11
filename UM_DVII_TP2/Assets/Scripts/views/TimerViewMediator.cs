@@ -10,23 +10,18 @@ public class TimerViewMediator : EventMediator {
 
 	override public void OnRegister()
 	{
-		view.Init ();
-		view.dispatcher.AddListener (GameEvents.ON_RESTORE_STATS, onRestoreStats);
+
+		dispatcher.AddListener (GameEvents.ON_UPDATE_TIME, onUpdateTime);
 	}
 
 	override public void OnRemove()
 	{
-		view.dispatcher.RemoveListener (GameEvents.ON_RESTORE_STATS, onRestoreStats);
-	}
-
-	void onRestoreStats(IEvent evt)
-	{
-		if (evt.data == view.player) {
-			dispatcher.Dispatch (GameEvents.ON_RESTORE_STATS, view.player);
-		} else {
-			dispatcher.Dispatch (GameEvents.ON_RESTORE_STATS, view.enemy);
-		}
-
+		dispatcher.RemoveListener (GameEvents.ON_UPDATE_TIME, onUpdateTime);
 	}
 		
+	private void onUpdateTime(IEvent evt)
+	{
+		int newTime = (int)evt.data;
+		view.UpdatePlayTime (newTime);
+	} 
 }

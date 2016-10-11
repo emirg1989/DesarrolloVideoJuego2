@@ -15,5 +15,6 @@ public class InitGameCommand : EventCommand {
         dispatcher.Dispatch(GameEvents.ON_INIT_INPUT);
         dispatcher.Dispatch(GameEvents.ON_INIT_ENEMIES);
 		dispatcher.Dispatch (GameEvents.ON_INIT_COLLECTABLE);
+		dispatcher.Dispatch (GameEvents.ON_INIT_TIMER);
     }
 }
