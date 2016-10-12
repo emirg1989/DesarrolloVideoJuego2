@@ -2,13 +2,13 @@
  "collectibles":
             [
                 {
-                    "name" : "collectible0",
+                    "name" : "collectible0"
                 },
                 {
-                    "name" : "collectible1",
+                    "name" : "collectible1"
                 },
                 {
-                    "name" : "collectible2",
+                    "name" : "collectible2"
                 },
             ]
 }
