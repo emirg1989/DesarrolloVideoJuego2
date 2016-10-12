@@ -1,0 +1,14 @@
+{
+ "collectibles":
+            [
+                {
+                    "name" : "collectible0",
+                },
+                {
+                    "name" : "collectible1",
+                },
+                {
+                    "name" : "collectible2",
+                },
+            ]
+}
