@@ -11,13 +11,13 @@ public class WeaponViewMediator : EventMediator {
 	override public void OnRegister()
 	{
 		
-		dispatcher.AddListener (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON, onUpdateDamage);
+		dispatcher.AddListener (GameEvents.ON_SET_NEW_DAMAGE_WEAPON, onUpdateDamage);
 	
 	}
 
 	override public void OnRemove()
 	{
-		dispatcher.RemoveListener (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON, onUpdateDamage);
+		dispatcher.RemoveListener (GameEvents.ON_SET_NEW_DAMAGE_WEAPON, onUpdateDamage);
 	}
 
 	void onUpdateDamage(IEvent evt)

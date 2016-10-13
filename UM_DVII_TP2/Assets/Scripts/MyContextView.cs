@@ -23,6 +23,8 @@ public class MyContextView : MVCSContext
         commandBinder.Bind(GameEvents.ON_UPDATE_MODEL_TIMER).To<UpdateModelTimerCommand>();
         commandBinder.Bind(GameEvents.ON_UPDATE).To<OnUpdateCommand>();
 		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER).To<NewSpeedPlayerCommand>();
+		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY).To<NewSpeedEnemyCommand> ();
+		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON).To<NewDamageWeaponCommand> ();
 
 
 

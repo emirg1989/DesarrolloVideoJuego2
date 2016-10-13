@@ -10,12 +10,12 @@ public class EnemyViewMediator : EventMediator {
 
 	override public void OnRegister()
 	{
-		dispatcher.AddListener (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY, onUpdateSpeed);
+		dispatcher.AddListener (GameEvents.ON_SET_NEW_SPEED_ENEMY, onUpdateSpeed);
 	}
 
 	override public void OnRemove()
 	{
-		dispatcher.RemoveListener (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY, onUpdateSpeed);
+		dispatcher.RemoveListener (GameEvents.ON_SET_NEW_SPEED_ENEMY, onUpdateSpeed);
 	}
 
 	void onUpdateSpeed(IEvent evt)

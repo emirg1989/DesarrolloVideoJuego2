@@ -5,4 +5,5 @@ public interface ICollectableModel
 {
 	
 	float amountPower{ get; set;}
+	string eventCollectable{ get; set;}
 }

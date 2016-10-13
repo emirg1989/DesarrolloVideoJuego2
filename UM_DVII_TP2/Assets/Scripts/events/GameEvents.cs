@@ -32,4 +32,6 @@
     public static string ON_UPDATE_MODEL_TIMER = "ON_UPDATE_MODEL_TIMER";
     public static string ON_UPDATE_TIME = "ON_UPDATE_TIME";
 	public static string ON_SET_NEW_SPEED_PLAYER = "ON_SET_NEW_SPEED_PLAYER";
+	public static string ON_SET_NEW_SPEED_ENEMY = "ON_SET_NEW_SPEED_ENEMY";
+	public static string ON_SET_NEW_DAMAGE_WEAPON = "ON_SET_NEW_DAMAGE_WEAPON";
 }

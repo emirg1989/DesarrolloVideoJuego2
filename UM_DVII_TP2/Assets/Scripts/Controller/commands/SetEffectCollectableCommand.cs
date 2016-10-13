@@ -10,9 +10,9 @@ public class SetEffectCollectableCommand : EventCommand
     override public void Execute()
     {
         string viewName = (string)evt.data;
-		string eventName = injectionBinder.GetBinding(viewName).value.ToString();
-		Debug.Log (eventName);
-		dispatcher.Dispatch(eventName,viewName);
+		ICollectableModel model = injectionBinder.GetBinding(viewName).value as ICollectableModel;
+		Debug.Log (model.eventCollectable);
+		dispatcher.Dispatch(model.eventCollectable,viewName);
 		/*
         dispatcher.Dispatch(eventName, viewName);
 
