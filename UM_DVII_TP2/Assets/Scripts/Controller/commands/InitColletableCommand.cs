@@ -4,38 +4,34 @@ using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using System.Collections.Generic;
 
-public class InitColletableCommand : EventCommand {
+using System;
+using SimpleJSON;
 
-	[Inject(ContextKeys.CONTEXT_VIEW)]
-	public GameObject contextView { get; set; }
 
-	override public void Execute()
+
+public class InitColletableCommand : EventCommand
+{
+
+    [Inject(ContextKeys.CONTEXT_VIEW)]
+    public GameObject contextView { get; set; }
+
+    override public void Execute()
 	{
-		for (int i = 0; i < 3; i++) 
-		{
-			ICollectableModel collectableModel = injectionBinder.GetInstance<ICollectableModel>();
-			if (i == 0) 
-			{
-	
-				collectableModel.amountPower = 30f;
-
-
-			} else if (i == 1) 
-			{
-				collectableModel.amountPower = 5f;
-				
-			} else 
-			{
-				collectableModel.amountPower = 20f;
-			}
-
-			string collectableName = Utility.Collectable + i;
-			GameObject goCollectable = GameObject.Instantiate(Resources.Load(collectableName)) as GameObject;
-			goCollectable.name = collectableName;
-			goCollectable.AddComponent<CollectableView>();
+		//cargamos el archivo collectable.json y lo devolvemos como un text
+		TextAsset file = Resources.Load ("Collectable") as TextAsset;
+		//parseamos ese file.text
+		var n = SimpleJSON.JSON.Parse (file.text);
+		//recorremos variable n y asignamos los valores
+		for (int i = 0; i < n ["collectibles"].Count; i++) {
+			ICollectableModel collectableModel = injectionBinder.GetInstance<ICollectableModel> ();
+			string nameCollectible = n ["collectibles"] [i] ["name"].Value;
+			collectableModel.amountPower = n ["collectibles"] [i] ["amount"].AsFloat;
+			string gameEvent = n ["collectibles"] [i] ["event"].ToString();
+			GameObject goCollectable = GameObject.Instantiate (Resources.Load (nameCollectible)) as GameObject;
+			goCollectable.name = nameCollectible;
+			goCollectable.AddComponent<CollectableView> ();
 			goCollectable.transform.parent = contextView.transform;
-			injectionBinder.Bind(collectableName).To(collectableModel);	
+			injectionBinder.Bind (nameCollectible).To (gameEvent);
 		}
 	}
-
 }

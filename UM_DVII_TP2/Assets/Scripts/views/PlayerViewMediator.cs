@@ -18,7 +18,7 @@ public class PlayerViewMediator : EventMediator
         dispatcher.AddListener
                  (GameEvents.ON_RIGHT, onViewRight);
         dispatcher.AddListener(GameEvents.ON_BACK, onViewBack);
-		dispatcher.AddListener (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER, onUpdateSpeed);
+		dispatcher.AddListener (GameEvents.ON_SET_NEW_SPEED_PLAYER, onUpdateSpeed);
     }
 
     override public void OnRemove()
@@ -30,7 +30,7 @@ public class PlayerViewMediator : EventMediator
         dispatcher.RemoveListener
                  (GameEvents.ON_RIGHT, onViewRight);
         dispatcher.RemoveListener(GameEvents.ON_BACK, onViewBack);
-		dispatcher.RemoveListener (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER, onUpdateSpeed);
+		dispatcher.RemoveListener (GameEvents.ON_SET_NEW_SPEED_PLAYER, onUpdateSpeed);
     }
    
     void onViewLeft()

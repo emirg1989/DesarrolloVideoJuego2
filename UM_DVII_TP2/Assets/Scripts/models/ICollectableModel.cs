@@ -5,5 +5,4 @@ public interface ICollectableModel
 {
 	
 	float amountPower{ get; set;}
-
 }

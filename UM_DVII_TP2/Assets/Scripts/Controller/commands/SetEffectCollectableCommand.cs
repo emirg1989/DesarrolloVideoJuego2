@@ -4,34 +4,41 @@ using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using strange.extensions.injector.api;
 
-public class  SetEffectCollectableCommand: EventCommand {
+public class SetEffectCollectableCommand : EventCommand
+{
 
+    override public void Execute()
+    {
+        string viewName = (string)evt.data;
+		string eventName = injectionBinder.GetBinding(viewName).value.ToString();
+		Debug.Log (eventName);
+		dispatcher.Dispatch(eventName,viewName);
+		/*
+        dispatcher.Dispatch(eventName, viewName);
 
-	[Inject]
-	public IPlayerModel player { get; set; }
-
-	[Inject]
-	public IWeaponModel weapon{ get; set;}
-
-	[Inject]
-	public IEnemyModel enemy { get; set; }
-
-	override public void Execute()
-	{
-		string viewName = (string)evt.data;
-		ICollectableModel collectableModel = injectionBinder.GetBinding(viewName).value as ICollectableModel;
-		if (viewName == Utility.Collectable0) {
+        
+			//******* CommandCollectible0 ***
 			player.Reset ();
 			float newDamage = player.speed + collectableModel.amountPower;
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER, newDamage);
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_MODEL_TIMER, Utility.Time1);
-		} else if (viewName == Utility.Collectable2) {
+			// empiezo a escuchar el ON_UPDATE para en otro command
+			// poder calcular el tiempo restante a partir de ahora
+			collectableModel.timeRemaining = collectableModel.duration;
+			commandBinder.Bind(GameEvents.ON_UPDATE).To<CalculateCollectibleRemainingTime>();
+
+			//******* CalculateCollectibleRemainingTime
+			restarle el DeltaTime al collectableModel.timeRemaining
+			y si es cero, disparas el evento para terminar el efecto del collectible
+
+
+
+			//********* CommandCollectible1
 			float newSpeed = collectableModel.amountPower;
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY, newSpeed);
 			dispatcher.Dispatch (GameEvents.ON_UPDATE_MODEL_TIMER, Utility.Time2);
-		} else if (viewName == Utility.Collectable1) {
+
+
+			//********* CommandCollectible2
 			float newDamage = weapon.damage + collectableModel.amountPower;
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON,newDamage);
-		}
-	}
+
+		*/
+    }
 }
