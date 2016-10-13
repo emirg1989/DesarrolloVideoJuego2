@@ -26,12 +26,12 @@ public class InitColletableCommand : EventCommand
 			ICollectableModel collectableModel = injectionBinder.GetInstance<ICollectableModel> ();
 			string nameCollectible = n ["collectibles"] [i] ["name"].Value;
 			collectableModel.amountPower = n ["collectibles"] [i] ["amount"].AsFloat;
-			string gameEvent = n ["collectibles"] [i] ["event"].ToString();
+			string gameEvent = n ["collectibles"] [i] ["event"];
 			GameObject goCollectable = GameObject.Instantiate (Resources.Load (nameCollectible)) as GameObject;
 			goCollectable.name = nameCollectible;
 			goCollectable.AddComponent<CollectableView> ();
 			goCollectable.transform.parent = contextView.transform;
-			injectionBinder.Bind (nameCollectible).To (gameEvent);
+			injectionBinder.Bind(nameCollectible).To(gameEvent);					
 		}
 	}
 }

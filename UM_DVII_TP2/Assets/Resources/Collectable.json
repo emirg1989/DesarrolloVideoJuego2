@@ -3,17 +3,17 @@
             [
                 {
                     "name" : "Collectable0",
-                    "event": "GameEvents.ON_UPDATE_NEW_SPEED_PLAYER",
+                    "event": ON_UPDATE_NEW_SPEED_PLAYER,
                     "amount": 30
                 },
                 {
                     "name" : "Collectable1",
-                    "event": "GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON",
+                    "event": ON_UPDATE_NEW_DAMAGE_WEAPON,
                     "amount": 5
                 },
                 {
                     "name" : "Collectable2",
-                    "event": "GameEvents.ON_UPDATE_NEW_SPEED_ENEMY",
+                    "event": ON_UPDATE_NEW_SPEED_ENEMY,
                     "amount": 20
                 },
             ]
