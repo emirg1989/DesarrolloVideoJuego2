@@ -15,8 +15,6 @@ public class OnUpdateCommand : EventCommand
     override public void Execute()
     {
         Debug.Log(Time.deltaTime);
-        //gameModel.time += evt.data as float;
+		gameModel.time += (int)evt.data;
     }
-
-
 }

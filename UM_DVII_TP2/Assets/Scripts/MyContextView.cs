@@ -28,6 +28,7 @@ public class MyContextView : MVCSContext
 
 
 
+
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<TimerView>().To<TimerViewMediator>();
         mediationBinder.Bind<WeaponView>().To<WeaponViewMediator>();

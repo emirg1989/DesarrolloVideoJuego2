@@ -11,23 +11,18 @@ public class InitEnemyCommand : EventCommand
 
     override public void Execute()
     {
-        //instanciamos el enemigo
-        for (int i = 0; i < 2; i++)
+		
+		TextAsset file = Resources.Load ("Enemies") as TextAsset;
+		var n = SimpleJSON.JSON.Parse (file.text);
+		for (int i = 0; i < n ["enemies"].Count; i++) 
 		{
             IEnemyModel enemyModel = injectionBinder.GetInstance<IEnemyModel>();
-			string enemyName = Utility.Enemy + i;
+			string enemyName = n["enemies"][i]["name"].Value;
+			enemyModel.speed = n ["enemies"] [i] ["speed"].AsFloat;
             GameObject goEnemy = GameObject.Instantiate(Resources.Load(enemyName)) as GameObject;
             goEnemy.name = enemyName;
             goEnemy.AddComponent<EnemyView>();
 			EnemyView enemyView = goEnemy.GetComponent<EnemyView> ();
-			if (i == 0)
-			{
-				enemyModel.speed = 50f;
-			}
-			else
-			{
-				enemyModel.speed = 60f;
-			}
 			enemyView.GetSpeed (enemyModel.speed);
             goEnemy.transform.parent = contextView.transform;
             injectionBinder.Bind(enemyName).To(enemyModel);

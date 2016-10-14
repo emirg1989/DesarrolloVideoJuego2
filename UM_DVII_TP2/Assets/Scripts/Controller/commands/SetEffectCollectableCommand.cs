@@ -11,34 +11,17 @@ public class SetEffectCollectableCommand : EventCommand
     {
         string viewName = (string)evt.data;
 		ICollectableModel model = injectionBinder.GetBinding(viewName).value as ICollectableModel;
-		Debug.Log (model.eventCollectable);
 		dispatcher.Dispatch(model.eventCollectable,viewName);
-		/*
-        dispatcher.Dispatch(eventName, viewName);
 
-        
-			//******* CommandCollectible0 ***
-			player.Reset ();
-			float newDamage = player.speed + collectableModel.amountPower;
-			// empiezo a escuchar el ON_UPDATE para en otro command
-			// poder calcular el tiempo restante a partir de ahora
-			collectableModel.timeRemaining = collectableModel.duration;
-			commandBinder.Bind(GameEvents.ON_UPDATE).To<CalculateCollectibleRemainingTime>();
+		// empiezo a escuchar el ON_UPDATE para en otro command
+		// poder calcular el tiempo restante a partir de ahora
+		//	model.timeRemaining = model.duration;
+		//	Debug.Log (model.timeRemaining);
+		//commandBinder.Bind(GameEvents.ON_UPDATE).To<CalculateCollectibleRemainingTimeCommand>();
 
 			//******* CalculateCollectibleRemainingTime
-			restarle el DeltaTime al collectableModel.timeRemaining
-			y si es cero, disparas el evento para terminar el efecto del collectible
+			//restarle el DeltaTime al collectableModel.timeRemaining
+			//y si es cero, disparas el evento para terminar el efecto del collectible
 
-
-
-			//********* CommandCollectible1
-			float newSpeed = collectableModel.amountPower;
-			dispatcher.Dispatch (GameEvents.ON_UPDATE_MODEL_TIMER, Utility.Time2);
-
-
-			//********* CommandCollectible2
-			float newDamage = weapon.damage + collectableModel.amountPower;
-
-		*/
     }
 }

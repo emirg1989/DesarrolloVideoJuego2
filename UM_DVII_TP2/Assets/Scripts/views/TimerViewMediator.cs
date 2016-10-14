@@ -10,13 +10,15 @@ public class TimerViewMediator : EventMediator {
 
 	override public void OnRegister()
 	{
-
-		dispatcher.AddListener (GameEvents.ON_UPDATE_TIME, onUpdateTime);
+		view.dispatcher.AddListener (GameEvents.ON_UPDATE, onInitTime);
+			dispatcher.AddListener (GameEvents.ON_UPDATE_TIME, onUpdateTime);
 	}
 
 	override public void OnRemove()
 	{
+		view.dispatcher.RemoveListener (GameEvents.ON_UPDATE, onInitTime);
 		dispatcher.RemoveListener (GameEvents.ON_UPDATE_TIME, onUpdateTime);
+
 	}
 		
 	private void onUpdateTime(IEvent evt)
@@ -24,4 +26,7 @@ public class TimerViewMediator : EventMediator {
 		int newTime = (int)evt.data;
 		view.UpdatePlayTime (newTime);
 	} 
+	private void onInitTime(){
+		dispatcher.Dispatch (GameEvents.ON_UPDATE, Time.time);
+	}
 }

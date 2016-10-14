@@ -2,19 +2,19 @@
  "collectibles":
             [
                 {
-                    "name" : "Collectable0",
+                    "name" : "PotionSpeedPlayer",
                     "event": ON_UPDATE_NEW_SPEED_PLAYER,
-                    "amount": 30
+                    "amount": 30,
                 },
                 {
-                    "name" : "Collectable1",
+                    "name" : "PotionDamage",
                     "event": ON_UPDATE_NEW_DAMAGE_WEAPON,
                     "amount": 5
                 },
                 {
-                    "name" : "Collectable2",
+                    "name" : "PotionDelayEnemy",
                     "event": ON_UPDATE_NEW_SPEED_ENEMY,
-                    "amount": 20
+                    "amount": 20,
                 },
             ]
 }
