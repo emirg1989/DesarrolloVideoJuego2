@@ -1,6 +1,6 @@
-{
+
  "collectibles":
-            [
+[
                 {
                     "name" : "PotionSpeedPlayer",
                     "event": ON_UPDATE_NEW_SPEED_PLAYER,
@@ -15,6 +15,6 @@
                     "name" : "PotionDelayEnemy",
                     "event": ON_UPDATE_NEW_SPEED_ENEMY,
                     "amount": 20,
-                },
-            ]
-}
+                }
+]
+
