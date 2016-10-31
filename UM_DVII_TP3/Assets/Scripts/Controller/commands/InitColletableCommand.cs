@@ -27,6 +27,7 @@ public class InitColletableCommand : EventCommand
 			string nameCollectible = n ["collectibles"] [i] ["name"].Value;
 			collectableModel.amountPower = n ["collectibles"] [i] ["amount"].AsFloat;
 			collectableModel.eventCollectable = n ["collectibles"] [i] ["event"];
+			collectableModel.nameSpriteCollectable =  n ["collectibles"] [i] ["sprite"].Value;
 			GameObject goCollectable = GameObject.Instantiate (Resources.Load (nameCollectible)) as GameObject;
 			goCollectable.name = nameCollectible;
 			goCollectable.AddComponent<CollectableView> ();

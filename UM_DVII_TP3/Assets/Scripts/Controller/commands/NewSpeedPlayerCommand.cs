@@ -16,6 +16,5 @@ public class NewSpeedPlayerCommand : EventCommand {
 		ICollectableModel model = injectionBinder.GetBinding(nameCollectable).value as ICollectableModel;
 		float newSpeed = player.speed + model.amountPower;
 		dispatcher.Dispatch (GameEvents.ON_SET_NEW_SPEED_PLAYER, newSpeed);
-
 	}
 }

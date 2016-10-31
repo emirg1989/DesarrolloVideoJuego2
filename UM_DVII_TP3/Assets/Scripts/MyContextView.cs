@@ -26,10 +26,7 @@ public class MyContextView : MVCSContext
 		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_SPEED_ENEMY).To<NewSpeedEnemyCommand> ();
 		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON).To<NewDamageWeaponCommand> ();
 		commandBinder.Bind (GameEvents.ON_INIT_INVENTARY).To<OnInitInventaryCommand> ();
-		commandBinder.Bind (GameEvents.ON_INIT_SLOT).To<InitSlotCommand> ();
-
-
-
+		commandBinder.Bind (GameEvents.ON_SPAWN_SPRITE_ITEM).To<InitSpriteItemCommand> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<TimerView>().To<TimerViewMediator>();
@@ -46,6 +43,7 @@ public class MyContextView : MVCSContext
         injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
         injectionBinder.Bind<ICollectableModel>().To<CollectableModel>();
         injectionBinder.Bind<IWeaponModel>().To<WeaponModel>();
-		injectionBinder.Bind<ISlotModel> ().To<SlotModel> ();
+		injectionBinder.Bind<IInventoryModel> ().To<InventoryModel> ();
+		injectionBinder.Bind<IItemModel> ().To<ItemModel> ();
     }
 }

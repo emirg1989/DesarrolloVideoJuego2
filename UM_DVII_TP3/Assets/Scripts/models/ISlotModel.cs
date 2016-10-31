@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public interface ISlotModel {
+public interface IInventoryModel {
 
-	int id{ get; set;}
+	List<GameObject>slots {get; set;}
 }

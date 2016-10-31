@@ -1,7 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class SlotModel : ISlotModel {
+public class InventoryModel : IInventoryModel {
 
-	public int id{ get; set;}
+	[PostConstruct]
+	public void PostConstruct()
+	{
+		slots = new List<GameObject> ();
+	}
+
+	public List<GameObject>slots { get; set;}
+
 }

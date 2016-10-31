@@ -6,7 +6,7 @@ public class CollectableView : EventView {
 
 	void OnTriggerEnter(Collider co){
 		
-		dispatcher.Dispatch (GameEvents.ON_SET_EFFECT_COLLECTABLE,this.gameObject.name);
+		dispatcher.Dispatch (GameEvents.ON_SPAWN_SPRITE_ITEM,this.gameObject.name);
 		Destroy (this.gameObject);
 
 	}

@@ -5,16 +5,19 @@
                     "name" : "PotionSpeedPlayer",
                     "event": ON_UPDATE_NEW_SPEED_PLAYER,
                     "amount": 30,
+                    "sprite":"PotionSpeedPlayerSprite"
                 },
                 {
                     "name" : "PotionDamage",
                     "event": ON_UPDATE_NEW_DAMAGE_WEAPON,
-                    "amount": 5
+                    "amount": 5,
+                    "sprite":"PotionDamageSprite"
                 },
                 {
                     "name" : "PotionDelayEnemy",
                     "event": ON_UPDATE_NEW_SPEED_ENEMY,
                     "amount": 20,
+                    "sprite":"PotionDelayEnemySprite"
                 },
             ]
 }

@@ -10,17 +10,17 @@ public class CollectableViewMediator : EventMediator {
 
 	override public void OnRegister()
 	{
-		view.dispatcher.AddListener (GameEvents.ON_SET_EFFECT_COLLECTABLE, onSetEffectCollectable);
+		view.dispatcher.AddListener (GameEvents.ON_SPAWN_SPRITE_ITEM, onSpawnSpriteItem);
 	}
 	override public void OnRemove()
 	{
-		view.dispatcher.RemoveListener (GameEvents.ON_SET_EFFECT_COLLECTABLE, onSetEffectCollectable);
+		view.dispatcher.RemoveListener (GameEvents.ON_SPAWN_SPRITE_ITEM, onSpawnSpriteItem);
 	}
 
 
-	void onSetEffectCollectable()
+	void onSpawnSpriteItem()
 	{
 		
-		dispatcher.Dispatch (GameEvents.ON_SET_EFFECT_COLLECTABLE, view.gameObject.name);
+		dispatcher.Dispatch (GameEvents.ON_SPAWN_SPRITE_ITEM, view.gameObject.name);
 	}
 }

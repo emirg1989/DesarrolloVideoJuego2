@@ -6,30 +6,28 @@ using UnityEngine.UI;
 
 public class InventoryView : EventView {
 
-	internal bool flag;
-	public List<GameObject> slots = new List<GameObject>();
 
-	internal void Init()
+	public List<SlotView> slotsView = new List<SlotView>();
+
+	internal void OpenInventory(bool flag)
 	{
-		this.gameObject.SetActive (false);
-		flag = false;
+		this.gameObject.SetActive (flag);
+
 	}
-
-	internal void OpenInventory()
-	{
-		this.gameObject.SetActive (true);
-		flag = true;
-	}
-
-
-	internal void focusSlot()
-	{
 		
-	}
-
-	internal void addSlot(GameObject slot)
+	internal void FocusSlot(int pos)
 	{
-		slots.Add (slot);
+		for (int i = 0; i < slotsView.Count ; i++) 
+		{
+			if (i == pos)
+			{
+				slotsView [i].Paint ();
+			}
+		}
 	}
 
+	internal void AddSlotView(SlotView slot)
+	{
+		slotsView.Add (slot);
+	}
 }

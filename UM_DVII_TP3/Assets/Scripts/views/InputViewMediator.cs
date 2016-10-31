@@ -14,6 +14,7 @@ public class InputViewMediator : EventMediator {
         view.dispatcher.AddListener(GameEvents.ON_RIGHT, onRight);
         view.dispatcher.AddListener(GameEvents.ON_BACK, onBack);
 		view.dispatcher.AddListener(GameEvents.ON_TOUCH_I, onTouchI);
+		view.dispatcher.AddListener(GameEvents.ON_TOUCH_NUM, onTouchNum);
     }
 
    override public void OnRemove()
@@ -24,6 +25,7 @@ public class InputViewMediator : EventMediator {
         view.dispatcher.RemoveListener(GameEvents.ON_RIGHT, onRight);
         view.dispatcher.RemoveListener(GameEvents.ON_BACK, onBack);
 		view.dispatcher.RemoveListener(GameEvents.ON_TOUCH_I, onTouchI);
+		view.dispatcher.RemoveListener(GameEvents.ON_TOUCH_NUM, onTouchNum);
     }
 
     void onLeft()
@@ -47,5 +49,9 @@ public class InputViewMediator : EventMediator {
 	void onTouchI()
 	{
 		dispatcher.Dispatch (GameEvents.ON_TOUCH_I);
+	}
+	void onTouchNum()
+	{
+		dispatcher.Dispatch (GameEvents.ON_TOUCH_NUM, view.pos);
 	}
 }
