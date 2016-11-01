@@ -4,9 +4,11 @@ using System.Collections;
 public class GameModel : IGameModel
 {
 
-    public void ResetTime()
-    {
-        time = 0;
-    }
+	[PostConstruct]
+	public void PostConstruct()
+	{
+		time = 0;
+
+	}
 	public float time { get; set; }
 }

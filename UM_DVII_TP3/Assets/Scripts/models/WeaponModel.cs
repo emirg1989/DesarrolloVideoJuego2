@@ -3,9 +3,11 @@ using System.Collections;
 
 public class WeaponModel : IWeaponModel
 {	
-	public void Reset()
+	[PostConstruct]
+	public void PostConstruct()
 	{
-		damage = 100;
+		damage = 100f;
+
 	}
 	public float damage{ get; set;}
 }

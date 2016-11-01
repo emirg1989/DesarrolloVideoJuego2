@@ -4,10 +4,12 @@ using System;
 
 public class PlayerModel : IPlayerModel
 {
-    public void Reset()
-    {
-        speed = 50f;
-    }
+	[PostConstruct]
+	public void PostConstruct()
+	{
+		speed = 50f;
+
+	}
 
     public float speed { get; set; }
 

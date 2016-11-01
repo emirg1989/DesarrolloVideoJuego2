@@ -13,7 +13,6 @@ public class InitPlayerCommand : EventCommand{
 
     override public void Execute()
     {
-        player.Reset();
         //instanciamos el player
         GameObject goPlayer = GameObject.Instantiate(Resources.Load(Utility.Player)) as GameObject;
         goPlayer.name = Utility.Player;

@@ -8,6 +8,5 @@ public class CollectableView : EventView {
 		
 		dispatcher.Dispatch (GameEvents.ON_SPAWN_SPRITE_ITEM,this.gameObject.name);
 		Destroy (this.gameObject);
-
 	}
 }

@@ -37,13 +37,13 @@ public class MyContextView : MVCSContext
 		mediationBinder.Bind<InventoryView> ().To<InventoryViewMediator> ();
 		mediationBinder.Bind<SlotView> ().To<SlotViewMediator> ();
 
-        injectionBinder.Bind<IPlayerModel>().To<PlayerModel>();
-        injectionBinder.Bind<ITimerModel>().To<TimerModel>();
-        injectionBinder.Bind<IGameModel>().To<GameModel>();
-        injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
-        injectionBinder.Bind<ICollectableModel>().To<CollectableModel>();
-        injectionBinder.Bind<IWeaponModel>().To<WeaponModel>();
-		injectionBinder.Bind<IInventoryModel> ().To<InventoryModel> ();
-		injectionBinder.Bind<IItemModel> ().To<ItemModel> ();
+		injectionBinder.Bind<IPlayerModel>().To<PlayerModel>().ToSingleton();
+		injectionBinder.Bind<ITimerModel>().To<TimerModel>().ToSingleton();
+		injectionBinder.Bind<IGameModel>().To<GameModel>().ToSingleton();
+		injectionBinder.Bind<IEnemyModel> ().To<EnemyModel> ();
+		injectionBinder.Bind<ICollectableModel> ().To<CollectableModel> ();
+		injectionBinder.Bind<IWeaponModel>().To<WeaponModel>().ToSingleton();
+		injectionBinder.Bind<IInventoryModel> ().To<InventoryModel> ().ToSingleton();
+		injectionBinder.Bind<IItemModel> ().To<ItemModel> ().ToSingleton();
     }
 }

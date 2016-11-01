@@ -13,7 +13,6 @@ public class InitWeaponCommand : EventCommand
 
 	override public void Execute()
 	{
-		weapon.Reset ();
 		GameObject goWeapon = GameObject.Instantiate (Resources.Load (Utility.Weapon)) as GameObject;
 		goWeapon.name = Utility.Weapon;
 		goWeapon.AddComponent<WeaponView>();

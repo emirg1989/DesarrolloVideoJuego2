@@ -11,7 +11,6 @@ public class NewSpeedPlayerCommand : EventCommand {
 
 	override public void Execute()
 	{
-		player.Reset ();
 		string nameCollectable = (string)evt.data;
 		ICollectableModel model = injectionBinder.GetBinding(nameCollectable).value as ICollectableModel;
 		float newSpeed = player.speed + model.amountPower;

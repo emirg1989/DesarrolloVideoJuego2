@@ -12,7 +12,6 @@ public class RestoreStatsCommand : EventCommand {
 	{
 		string nameGameObject = (string)evt.data;
 		if (nameGameObject == Utility.Player) {
-			player.Reset ();
 			dispatcher.Dispatch (GameEvents.ON_UPDATE_NEW_SPEED_PLAYER, player.speed);
 		} else if (nameGameObject == Utility.Enemy) {
 			IEnemyModel enemyModel = injectionBinder.GetInstance<IEnemyModel>();
