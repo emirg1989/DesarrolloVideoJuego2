@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class InventoryModel : IInventoryModel {
+public class SlotModel : IInventoryModel {
 
 	[PostConstruct]
 	public void PostConstruct()
