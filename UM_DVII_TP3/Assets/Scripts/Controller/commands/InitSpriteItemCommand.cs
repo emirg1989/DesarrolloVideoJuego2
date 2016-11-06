@@ -20,15 +20,18 @@ public class InitSpriteItemCommand : EventCommand {
 		ICollectableModel model = injectionBinder.GetBinding(viewName).value as ICollectableModel;
 		for (int i = 0; i < inventory.slots.Count; i++) 
 		{
-			if (inventory.slots[i].transform.childCount == 0) 
+			if (inventory.slots[i].transform.childCount == 0)
 			{
+				// lo hagas una vez al principio y guardes la referencia al GameObject en un modelo
+				// para no tener que cargar de nuevo todas las veces que agarres un collectable
 				GameObject goItem = GameObject.Instantiate (Resources.Load ("Item")) as GameObject;
 				goItem.name = model.nameSpriteCollectable;
+				// esto tambien
 				goItem.GetComponent<Image> ().sprite = Resources.Load<Sprite> (model.nameSpriteCollectable);
-				goItem.transform.SetParent (inventory.slots [i].transform);
-				goItem.transform.position = Vector2.zero;
+				goItem.transform.SetParent (inventory.slots[i].transform, false);
+				goItem.transform.localPosition = Vector3.zero;
 				break;
-			} 
+			}
 		}
 	}
 }

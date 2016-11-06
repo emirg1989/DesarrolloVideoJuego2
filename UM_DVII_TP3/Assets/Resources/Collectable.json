@@ -19,5 +19,21 @@
                     "amount": 20,
                     "sprite":"PotionDelayEnemySprite"
                 },
+                {
+                    "name": "MG42Collectable",
+                    "amount": 100,
+                    "sprite": "MG42Sprite"
+                },
+                {
+                    "name":"M60Collectable",
+                    "amount": 120,
+                    "sprite":"M60Sprite"
+                },
+                {
+                    "name": "Browminng M2 Collectable",
+                    "amount": 150,
+                    "sprite": "Browminng M2 Sprite"
+                }
+                
             ]
 }

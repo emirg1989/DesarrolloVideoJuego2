@@ -25,7 +25,7 @@ public class OnInitInventaryCommand : EventCommand {
 			goSlot.name = "Slot" + i;
 			goSlot.AddComponent<SlotView> ();
 			SlotView slot = goSlot.GetComponent<SlotView>();
-			goSlot.transform.parent = contextView.transform.FindChild("HUD").FindChild("Inventory").transform;
+			goSlot.transform.SetParent(contextView.transform.FindChild("HUD").FindChild("Inventory").transform, false);
 			inventory.AddSlotView (slot);
 			inventoryModel.slots.Add (goSlot);
 		}

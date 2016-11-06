@@ -9,6 +9,7 @@ public class InventoryView : EventView {
 
 	public List<SlotView> slotsView = new List<SlotView>();
 
+
 	internal void OpenInventory(bool flag)
 	{
 		this.gameObject.SetActive (flag);
