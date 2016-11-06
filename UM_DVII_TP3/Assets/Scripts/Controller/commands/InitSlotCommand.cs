@@ -17,7 +17,7 @@ public class InitSlotCommand : EventCommand {
 			GameObject goSlot = GameObject.Instantiate(Resources.Load("Slot")) as GameObject;
 			goSlot.name = "Slot";
 			goSlot.AddComponent<SlotView> ();
-			goSlot.transform.parent = contextView.transform.FindChild("HUD").FindChild("Inventory").transform;
+			goSlot.transform.SetParent(contextView.transform.FindChild("HUD").FindChild("Inventory").transform, false);
 			dispatcher.Dispatch (GameEvents.ON_ADD_SLOT, goSlot);
 		}
 	}

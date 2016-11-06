@@ -15,10 +15,10 @@ public class InitSpriteItemCommand : EventCommand {
 
 	override public void Execute()
 	{
-		
+
 		string viewName = (string)evt.data;
 		ICollectableModel model = injectionBinder.GetBinding(viewName).value as ICollectableModel;
-		for (int i = 0; i < inventory.slots.Count; i++) 
+		for (int i = 0; i < inventory.slots.Count; i++)
 		{
 			if (inventory.slots[i].transform.childCount == 0)
 			{
@@ -29,6 +29,10 @@ public class InitSpriteItemCommand : EventCommand {
 				// esto tambien
 				goItem.GetComponent<Image> ().sprite = Resources.Load<Sprite> (model.nameSpriteCollectable);
 				goItem.transform.SetParent (inventory.slots[i].transform, false);
+<<<<<<< HEAD
+=======
+				//goItem.transform.position = Vector3.zero;
+>>>>>>> origin/master
 				goItem.transform.localPosition = Vector3.zero;
 				break;
 			}
