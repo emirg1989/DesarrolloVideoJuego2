@@ -16,7 +16,7 @@ public class ItemViewMediator : EventMediator {
 	override public void OnRemove()
 	{
 		itemView.dispatcher.RemoveListener (GameEvents.ON_TOUCH_ME, onTouchMe);
-		dispatcher.AddListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);
+		dispatcher.RemoveListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);
 	}
 
 	void onTouchMe()

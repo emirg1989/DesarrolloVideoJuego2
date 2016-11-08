@@ -6,16 +6,16 @@ public class ItemView : EventView {
 
 	public void ShowMenu()
 	{
-		dispatcher.Dispatch (GameEvents.ON_TOUCH_ME, this.gameObject);
+		dispatcher.Dispatch (GameEvents.ON_TOUCH_ME, this.gameObject.name);
 	}
 
 	internal void DestroyItem(string nameItem)
 	{
-		/*
-		if (nameItem == this.gameObject.name) 
+
+		if (nameItem == this.gameObject.name)
 		{
 			Destroy (this.gameObject);
 		}
-		*/
+		
 	}
 }

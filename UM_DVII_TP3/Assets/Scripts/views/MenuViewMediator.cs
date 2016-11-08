@@ -13,19 +13,19 @@ public class MenuViewMediator : EventMediator {
 		menuView.Init ();
 		dispatcher.AddListener (GameEvents.ON_TOUCH_ME, onTouchMe);
 		menuView.dispatcher.AddListener (GameEvents.ON_USE_ITEM, onUseItem);
-		menuView.dispatcher.AddListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);	
+		menuView.dispatcher.AddListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);
 	}
 
 	override public void OnRemove()
 	{
 		dispatcher.RemoveListener (GameEvents.ON_TOUCH_ME, onTouchMe);
 		menuView.dispatcher.RemoveListener (GameEvents.ON_USE_ITEM, onUseItem);
-		menuView.dispatcher.AddListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);	
+		menuView.dispatcher.AddListener (GameEvents.ON_DESTROY_ITEM, onDestroyItem);
 	}
 
 	void onTouchMe(IEvent evt)
 	{
-		string name = (string)evt.data; 
+		string name = (string) evt.data;
 		menuView.Show (name);
 	}
 

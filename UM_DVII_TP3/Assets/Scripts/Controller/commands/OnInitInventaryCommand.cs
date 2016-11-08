@@ -18,7 +18,7 @@ public class OnInitInventaryCommand : EventCommand {
 		goInventary.name = "HUD";
 		goInventary.transform.FindChild("Inventory").gameObject.AddComponent<InventoryView>();
 		InventoryView inventory = goInventary.transform.FindChild("Inventory").gameObject.GetComponent<InventoryView> ();
-		goInventary.transform.parent = contextView.transform;
+		goInventary.transform.SetParent(contextView.transform, false);
 		for(int i= 0; i < 6 ; i++)
 		{
 			GameObject goSlot = GameObject.Instantiate(Resources.Load("Slot")) as GameObject;
