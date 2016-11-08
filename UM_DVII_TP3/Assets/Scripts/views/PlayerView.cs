@@ -7,6 +7,7 @@ public class PlayerView : EventView {
 
     public float speedPlayer;
     Rigidbody rb;
+	internal string nameWeapon;
 
    internal void init()
     {
@@ -34,4 +35,12 @@ public class PlayerView : EventView {
     {
         speedPlayer  = speed;
     }
+
+	internal void SaveWeapon()
+	{
+		GameObject child = this.transform.GetChild (0).gameObject;
+		nameWeapon = child.name;
+		Destroy (child);
+		dispatcher.Dispatch (GameEvents.ON_SPAWN_SPRITE_ITEM, nameWeapon);
+	}
 }

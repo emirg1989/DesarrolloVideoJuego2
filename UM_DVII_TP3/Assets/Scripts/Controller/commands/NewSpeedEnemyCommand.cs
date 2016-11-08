@@ -10,9 +10,8 @@ public class NewSpeedEnemyCommand : EventCommand {
 	override public void Execute()
 	{
 		string nameCollectable = (string)evt.data;
-		ICollectableModel model = injectionBinder.GetBinding(nameCollectable).value as ICollectableModel;
+		ICollectableModel model = injectionBinder.GetBinding (nameCollectable).value as ICollectableModel;
 		float newSpeed = enemy.speed + model.amountPower;
 		dispatcher.Dispatch (GameEvents.ON_SET_NEW_SPEED_ENEMY, newSpeed);
 	}
-
 }

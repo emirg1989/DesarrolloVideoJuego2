@@ -19,6 +19,8 @@ public class PlayerViewMediator : EventMediator
                  (GameEvents.ON_RIGHT, onViewRight);
         dispatcher.AddListener(GameEvents.ON_BACK, onViewBack);
 		dispatcher.AddListener (GameEvents.ON_SET_NEW_SPEED_PLAYER, onUpdateSpeed);
+		dispatcher.AddListener (GameEvents.ON_SAVE_WEAPON, onSaveWeapon);
+		view.dispatcher.AddListener(GameEvents.ON_SPAWN_SPRITE_ITEM, onSpriteWeapon);
     }
 
     override public void OnRemove()
@@ -31,6 +33,8 @@ public class PlayerViewMediator : EventMediator
                  (GameEvents.ON_RIGHT, onViewRight);
         dispatcher.RemoveListener(GameEvents.ON_BACK, onViewBack);
 		dispatcher.RemoveListener (GameEvents.ON_SET_NEW_SPEED_PLAYER, onUpdateSpeed);
+		dispatcher.AddListener (GameEvents.ON_SAVE_WEAPON, onSaveWeapon);
+		view.dispatcher.RemoveListener(GameEvents.ON_SPAWN_SPRITE_ITEM, onSpriteWeapon);
     }
    
     void onViewLeft()
@@ -57,5 +61,13 @@ public class PlayerViewMediator : EventMediator
 		float newSpeed = (float)evt.data;
 		view.GetSpeed (newSpeed);
 	}
+	void onSaveWeapon()
+	{
+		view.SaveWeapon ();
+	}
 
+	void onSpriteWeapon()
+	{
+		dispatcher.Dispatch (GameEvents.ON_SPAWN_SPRITE_ITEM, view.nameWeapon);
+	}
 }

@@ -6,4 +6,5 @@ public interface IPlayerModel
 
     float speed { get; set; }
 	float life{ get; set; }
+	bool haveWeapon{ get; set;}
 }

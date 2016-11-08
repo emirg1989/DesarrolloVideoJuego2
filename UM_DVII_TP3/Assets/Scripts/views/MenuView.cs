@@ -21,10 +21,10 @@ public class MenuView : EventView {
 	{
 		dispatcher.Dispatch (GameEvents.ON_USE_ITEM, name);
 		this.gameObject.SetActive (flag);
+		dispatcher.Dispatch (GameEvents.ON_DESTROY_ITEM, name);
 	}
 	public void OnTouchEliminar()
 	{
 		
 	}
-
 }

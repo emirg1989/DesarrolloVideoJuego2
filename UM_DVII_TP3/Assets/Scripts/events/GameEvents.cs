@@ -45,4 +45,6 @@
 	public static string ON_TOUCH_UTILIZAR = "ON_TOUCH_UTILIZAR";
 	public static string ON_TOUCH_DESECHAR = "ON_TOUCH_DESECHAR";
 	public static string ON_USE_ITEM = "ON_USE_ITEM";
+	public static string ON_SAVE_WEAPON = "ON_SAVE_WEAPON";
+	public static string ON_DESTROY_ITEM = "ON_DESTROY_ITEM";
 }

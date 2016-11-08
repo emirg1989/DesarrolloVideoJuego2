@@ -9,9 +9,11 @@ public class PlayerModel : IPlayerModel
 	{
 		speed = 50f;
 		life = 50f;
+		haveWeapon = false;
 
 	}
     public float speed { get; set; }
 	public float life{ get; set;}
+	public bool haveWeapon{ get; set;}
 
 }
