@@ -15,13 +15,15 @@ public class InitSpriteItemCommand : EventCommand {
 
 	override public void Execute()
 	{
-		
+
 		string viewName = (string)evt.data;
 		ICollectableModel model = injectionBinder.GetBinding(viewName).value as ICollectableModel;
-		for (int i = 0; i < inventory.slots.Count; i++) 
+
+		for (int i = 0; i < inventory.slots.Count; i++)
 		{
 			if (inventory.slots[i].transform.childCount == 0)
 			{
+
 				// lo hagas una vez al principio y guardes la referencia al GameObject en un modelo
 				// para no tener que cargar de nuevo todas las veces que agarres un collectable
 				GameObject goItem = GameObject.Instantiate (Resources.Load ("Item")) as GameObject;

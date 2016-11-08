@@ -15,7 +15,9 @@ public class InitWeaponCommand : EventCommand
 	{
 		string nameCollectable = (string)evt.data;
 		ICollectableModel model = injectionBinder.GetBinding(nameCollectable).value as ICollectableModel;
-		if (player.haveWeapon == false) {
+
+		if (player.haveWeapon == false)
+		{
 			GameObject goWeapon = GameObject.Instantiate (Resources.Load (model.name)) as GameObject;
 			goWeapon.name = model.name;
 			goWeapon.AddComponent<WeaponView> ();
