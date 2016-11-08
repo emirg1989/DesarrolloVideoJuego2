@@ -37,6 +37,7 @@ public class MyContextView : MVCSContext
 		mediationBinder.Bind<InventoryView> ().To<InventoryViewMediator> ();
 		mediationBinder.Bind<SlotView>().To<SlotViewMediator> ();
 		mediationBinder.Bind<ItemView>().To<ItemViewMediator> ();
+		mediationBinder.Bind<MenuView> ().To<MenuViewMediator> ();
 
 		injectionBinder.Bind<IPlayerModel>().To<PlayerModel>().ToSingleton();
 		injectionBinder.Bind<ITimerModel>().To<TimerModel>().ToSingleton();

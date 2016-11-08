@@ -40,4 +40,5 @@
 	public static string ON_ADD_SLOT = "ON_ADD_SLOT";
 	public static string ON_TOUCH_NUM = "ON_TOUCH_NUM";
 	public static string ON_SPAWN_SPRITE_ITEM = "ON_SPAWN_SPRITE_ITEM";
+	public static string ON_TOUCH_ME = "ON_TOUCH_ME";
 }
