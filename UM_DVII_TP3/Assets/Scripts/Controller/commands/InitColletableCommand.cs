@@ -24,15 +24,15 @@ public class InitColletableCommand : EventCommand
 		//recorremos variable n y asignamos los valores
 		for (int i = 0; i < n ["collectibles"].Count; i++) {
 			ICollectableModel collectableModel = injectionBinder.GetInstance<ICollectableModel> ();
-			string nameCollectible = n ["collectibles"] [i] ["name"].Value;
+			collectableModel.name = n ["collectibles"] [i] ["name"].Value;
 			collectableModel.amountPower = n ["collectibles"] [i] ["amount"].AsFloat;
 			collectableModel.eventCollectable = n ["collectibles"] [i] ["event"];
 			collectableModel.nameSpriteCollectable =  n ["collectibles"] [i] ["sprite"].Value;
-			GameObject goCollectable = GameObject.Instantiate (Resources.Load (nameCollectible)) as GameObject;
-			goCollectable.name = nameCollectible;
+			GameObject goCollectable = GameObject.Instantiate (Resources.Load (collectableModel.name)) as GameObject;
+			goCollectable.name = collectableModel.name;
 			goCollectable.AddComponent<CollectableView> ();
 			goCollectable.transform.parent = contextView.transform;
-			injectionBinder.Bind(nameCollectible).To(collectableModel);					
+			injectionBinder.Bind(collectableModel.name).To(collectableModel);					
 		}
 	}
 }

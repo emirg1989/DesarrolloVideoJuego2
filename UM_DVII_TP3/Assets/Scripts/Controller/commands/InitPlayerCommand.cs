@@ -20,6 +20,5 @@ public class InitPlayerCommand : EventCommand{
         PlayerView playerView = goPlayer.GetComponent<PlayerView>();
         playerView.GetSpeed(player.speed);
 		goPlayer.transform.parent = contextView.transform;
-		dispatcher.Dispatch (GameEvents.ON_INIT_WEAPON);
     }
 }

@@ -27,6 +27,8 @@ public class MyContextView : MVCSContext
 		commandBinder.Bind (GameEvents.ON_UPDATE_NEW_DAMAGE_WEAPON).To<NewDamageWeaponCommand> ();
 		commandBinder.Bind (GameEvents.ON_INIT_INVENTARY).To<OnInitInventaryCommand> ();
 		commandBinder.Bind (GameEvents.ON_SPAWN_SPRITE_ITEM).To<InitSpriteItemCommand> ();
+		commandBinder.Bind (GameEvents.ON_USE_ITEM).To<OnUseItemCommand> ();
+		commandBinder.Bind (GameEvents.ON_INCREMENT_LIFE_PLAYER).To<IncrementLifePlayer> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<TimerView>().To<TimerViewMediator>();

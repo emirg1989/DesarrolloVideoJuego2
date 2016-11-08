@@ -8,17 +8,17 @@ public class InitWeaponCommand : EventCommand
 	[Inject(ContextKeys.CONTEXT_VIEW)]
 	public GameObject contextView { get; set; }
 
-	[Inject]
-	public IWeaponModel weapon{ get; set;}
-
 	override public void Execute()
 	{
-		GameObject goWeapon = GameObject.Instantiate (Resources.Load (Utility.Weapon)) as GameObject;
-		goWeapon.name = Utility.Weapon;
+		string nameCollectable = (string)evt.data;
+		ICollectableModel model = injectionBinder.GetBinding(nameCollectable).value as ICollectableModel;
+		GameObject goWeapon = GameObject.Instantiate (Resources.Load (model.name)) as GameObject;
+		goWeapon.name = model.name;
 		goWeapon.AddComponent<WeaponView>();
 		WeaponView weaponView = goWeapon.GetComponent<WeaponView> ();
-		weaponView.UpdateDamage (weapon.damage);
-		goWeapon.transform.parent = contextView.GetComponentInChildren<PlayerView>().transform;
-		dispatcher.Dispatch (GameEvents.ON_SET_DAMAGE_WEAPON, weapon.damage);
+		weaponView.UpdateDamage (model.amountPower);
+		goWeapon.transform.SetParent( contextView.GetComponentInChildren<PlayerView>().transform);
+		goWeapon.transform.localPosition = Vector3.right;
+		dispatcher.Dispatch (GameEvents.ON_SET_DAMAGE_WEAPON, model.amountPower);
 	}
 }

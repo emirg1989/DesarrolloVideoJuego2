@@ -19,7 +19,7 @@ public class ItemViewMediator : EventMediator {
 
 	void onTouchMe()
 	{
-		dispatcher.Dispatch (GameEvents.ON_TOUCH_ME);
+		dispatcher.Dispatch (GameEvents.ON_TOUCH_ME, itemView.gameObject.name);
 	}
 
 }

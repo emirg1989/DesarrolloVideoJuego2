@@ -34,6 +34,7 @@
 	public static string ON_SET_NEW_SPEED_PLAYER = "ON_SET_NEW_SPEED_PLAYER";
 	public static string ON_SET_NEW_SPEED_ENEMY = "ON_SET_NEW_SPEED_ENEMY";
 	public static string ON_SET_NEW_DAMAGE_WEAPON = "ON_SET_NEW_DAMAGE_WEAPON";
+	public static string ON_INCREMENT_LIFE_PLAYER = "ON_INCREMENT_LIFE_PLAYER";
 	public static string ON_INIT_INVENTARY = "ON_INIT_INVENTARY";
 	public static string ON_TOUCH_I = "ON_TOUCH_I";
 	public static string ON_INIT_SLOT = "ON_INIT_SLOT";
@@ -41,4 +42,7 @@
 	public static string ON_TOUCH_NUM = "ON_TOUCH_NUM";
 	public static string ON_SPAWN_SPRITE_ITEM = "ON_SPAWN_SPRITE_ITEM";
 	public static string ON_TOUCH_ME = "ON_TOUCH_ME";
+	public static string ON_TOUCH_UTILIZAR = "ON_TOUCH_UTILIZAR";
+	public static string ON_TOUCH_DESECHAR = "ON_TOUCH_DESECHAR";
+	public static string ON_USE_ITEM = "ON_USE_ITEM";
 }

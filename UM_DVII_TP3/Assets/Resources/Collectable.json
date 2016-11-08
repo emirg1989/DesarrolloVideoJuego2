@@ -22,17 +22,26 @@
                 {
                     "name": "MG42Collectable",
                     "amount": 100,
-                    "sprite": "MG42Sprite"
+                    "sprite": "MG42Sprite",
+                    "event": ON_INIT_WEAPON,
                 },
                 {
                     "name":"M60Collectable",
                     "amount": 120,
-                    "sprite":"M60Sprite"
+                    "sprite":"M60Sprite",
+                    "event": ON_INIT_WEAPON,
                 },
                 {
                     "name": "Browminng M2 Collectable",
                     "amount": 150,
-                    "sprite": "Browminng M2 Sprite"
+                    "sprite": "Browminng M2 Sprite",
+                    "event": ON_INIT_WEAPON,
+                },
+                {
+                    "name":"PotionEnergyPlayer",
+                    "event": ON_INCREMENT_LIFE_PLAYER,
+                    "amount": 20,
+                    "sprite":"PotionEnergyPlayerSprite"
                 }
                 
             ]

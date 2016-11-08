@@ -8,9 +8,10 @@ public class PlayerModel : IPlayerModel
 	public void PostConstruct()
 	{
 		speed = 50f;
+		life = 50f;
 
 	}
-
     public float speed { get; set; }
+	public float life{ get; set;}
 
 }

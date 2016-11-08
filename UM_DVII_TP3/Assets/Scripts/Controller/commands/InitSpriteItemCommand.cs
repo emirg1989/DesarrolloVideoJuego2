@@ -25,7 +25,7 @@ public class InitSpriteItemCommand : EventCommand {
 				// lo hagas una vez al principio y guardes la referencia al GameObject en un modelo
 				// para no tener que cargar de nuevo todas las veces que agarres un collectable
 				GameObject goItem = GameObject.Instantiate (Resources.Load ("Item")) as GameObject;
-				goItem.name = model.nameSpriteCollectable;
+				goItem.name = model.name;
 				// esto tambien
 				goItem.GetComponent<Image> ().sprite = Resources.Load<Sprite> (model.nameSpriteCollectable);
 				goItem.transform.SetParent (inventory.slots[i].transform, false);
