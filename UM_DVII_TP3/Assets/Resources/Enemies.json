@@ -1,0 +1,13 @@
+{
+ "enemies":
+            [
+                {
+                    "name" : "MadDog",
+                    "speed": 60
+                },
+                {
+                    "name" : "Scorpion",
+                    "speed": 50
+                },
+            ]
+}
