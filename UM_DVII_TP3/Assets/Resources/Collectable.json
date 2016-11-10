@@ -1,0 +1,55 @@
+{
+ "collectibles":
+            [
+                {
+                    "name" : "PotionSpeedPlayer",
+                    "event": ON_UPDATE_NEW_SPEED_PLAYER,
+                    "amount": 30,
+                    "sprite":"PotionSpeedPlayerSprite",
+                    "saveInInventory":false,
+                },
+                {
+                    "name" : "PotionDamage",
+                    "event": ON_UPDATE_NEW_DAMAGE_WEAPON,
+                    "amount": 5,
+                    "sprite":"PotionDamageSprite",
+                    "saveInInventory":false,
+                },
+                {
+                    "name" : "PotionDelayEnemy",
+                    "event": ON_UPDATE_NEW_SPEED_ENEMY,
+                    "amount": 20,
+                    "sprite":"PotionDelayEnemySprite",
+                    "saveInInventory":false,
+                },
+                {
+                    "name": "MG42Collectable",
+                    "amount": 100,
+                    "sprite": "MG42Sprite",
+                    "event": ON_INIT_WEAPON,
+                    "saveInInventory":true,
+                },
+                {
+                    "name":"M60Collectable",
+                    "amount": 120,
+                    "sprite":"M60Sprite",
+                    "event": ON_INIT_WEAPON,
+                    "saveInInventory":true,
+                },
+                {
+                    "name": "Browminng M2 Collectable",
+                    "amount": 150,
+                    "sprite": "Browminng M2 Sprite",
+                    "event": ON_INIT_WEAPON,
+                    "saveInInventory":true,
+                },
+                {
+                    "name":"PotionEnergyPlayer",
+                    "event": ON_INCREMENT_LIFE_PLAYER,
+                    "amount": 20,
+                    "sprite":"PotionEnergyPlayerSprite",
+                    "saveInInventory":true,
+                }
+                
+            ]
+}
